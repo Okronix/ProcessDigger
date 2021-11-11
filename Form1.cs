@@ -118,9 +118,9 @@ namespace Process_Digger
 
         private void btnKill_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow.Cells[1].Value != null)
+            if (dataGridView1.CurrentRow.Cells[2].Value != null)
             {
-                processKill(Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value));
+                processKill(Convert.ToInt32(dataGridView1.CurrentRow.Cells[2].Value));
             }
         }
 
