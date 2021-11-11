@@ -11,9 +11,10 @@ namespace Process_Digger
         }
         private void FormSettings_Load(object sender, EventArgs e)
         {
+            this.TopMost = Properties.Settings.Default.topMost;
+
             comboBox1.SelectedIndex = Properties.Settings.Default.sortBy;
             checkBox1.Checked = Properties.Settings.Default.topMost;
-            this.TopMost = Properties.Settings.Default.topMost;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

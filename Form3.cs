@@ -47,5 +47,10 @@ namespace Process_Digger
                 Process.Start(textProcessName.Text);
             }
         }
+
+        private void FormNewProcess_Load(object sender, EventArgs e)
+        {
+            this.TopMost = Properties.Settings.Default.topMost;
+        }
     }
 }

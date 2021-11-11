@@ -59,5 +59,45 @@ namespace Process_Digger.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ico_GH {
+            get {
+                object obj = ResourceManager.GetObject("ico_GH", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ico_NAB {
+            get {
+                object obj = ResourceManager.GetObject("ico_NAB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ico_TG {
+            get {
+                object obj = ResourceManager.GetObject("ico_TG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon icoWinStandart {
+            get {
+                object obj = ResourceManager.GetObject("icoWinStandart", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

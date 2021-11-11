@@ -92,7 +92,7 @@ namespace Process_Digger
             this.MinimizeBox = false;
             this.Name = "FormSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Process Digger - Настройки";
+            this.Text = "Process Digger - Меню настроек";
             this.Load += new System.EventHandler(this.FormSettings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
