@@ -13,13 +13,13 @@ namespace Process_Digger
         {
             this.TopMost = Properties.Settings.Default.topMost;
 
-            comboBox1.SelectedIndex = Properties.Settings.Default.sortBy;
+            comboBox1.SelectedIndex = Properties.Settings.Default.sortBy - 1;
             checkBox1.Checked = Properties.Settings.Default.topMost;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.sortBy = comboBox1.SelectedIndex;
+            Properties.Settings.Default.sortBy = comboBox1.SelectedIndex + 1;
             Properties.Settings.Default.topMost = checkBox1.Checked;
             Properties.Settings.Default.Save();
             this.Close();

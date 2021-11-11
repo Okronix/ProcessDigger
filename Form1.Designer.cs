@@ -47,17 +47,17 @@ namespace Process_Digger
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnPic = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextData = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.завершитьПроцессToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.завершитьДревоToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.свойстваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.ColumnPic = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -74,7 +74,7 @@ namespace Process_Digger
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(744, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(457, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -169,7 +169,7 @@ namespace Process_Digger
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(744, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(457, 25);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -223,9 +223,40 @@ namespace Process_Digger
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(744, 444);
+            this.dataGridView1.Size = new System.Drawing.Size(457, 444);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
+            // 
+            // ColumnPic
+            // 
+            this.ColumnPic.HeaderText = "";
+            this.ColumnPic.Name = "ColumnPic";
+            this.ColumnPic.ReadOnly = true;
+            this.ColumnPic.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnPic.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColumnPic.Width = 25;
+            // 
+            // ColumnName
+            // 
+            this.ColumnName.HeaderText = "Название";
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.Width = 180;
+            // 
+            // ColumnNum
+            // 
+            this.ColumnNum.HeaderText = "ID";
+            this.ColumnNum.Name = "ColumnNum";
+            this.ColumnNum.Width = 50;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Память";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Память";
+            this.Column4.Name = "Column4";
             // 
             // contextData
             // 
@@ -266,7 +297,7 @@ namespace Process_Digger
             this.statusStrip1.Location = new System.Drawing.Point(0, 471);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip1.Size = new System.Drawing.Size(744, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(457, 22);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -276,43 +307,12 @@ namespace Process_Digger
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(117, 17);
             this.toolStripStatusLabel1.Text = "Процессов запущено:";
             // 
-            // ColumnPic
-            // 
-            this.ColumnPic.HeaderText = "";
-            this.ColumnPic.Name = "ColumnPic";
-            this.ColumnPic.ReadOnly = true;
-            this.ColumnPic.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnPic.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ColumnPic.Width = 25;
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.HeaderText = "Название";
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.Width = 180;
-            // 
-            // ColumnNum
-            // 
-            this.ColumnNum.HeaderText = "ID";
-            this.ColumnNum.Name = "ColumnNum";
-            this.ColumnNum.Width = 50;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Память";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Память";
-            this.Column4.Name = "Column4";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(744, 493);
+            this.ClientSize = new System.Drawing.Size(457, 493);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
