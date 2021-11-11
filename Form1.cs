@@ -42,7 +42,6 @@ namespace Process_Digger
                 //string[] arr = { "" + proc.ProcessName, "" + proc.Id, "" + proc.WorkingSet64 /1000000 + " MB", "" + proc.VirtualMemorySize64 / 1000000 + " MB", "" + proc.MachineName, "" + proc.BasePriority};
                 //Icon.ExtractAssociatedIcon(proc.StartInfo.FileName).ToBitmap(), arr
                 dataGridView1.Rows.Add();
-
                 try
                 {
                     dataGridView1.Rows[i].Cells["ColumnPic"].Value = new Bitmap(new Bitmap(Icon.ExtractAssociatedIcon(proc.MainModule.FileName.ToString()).ToBitmap()), new Size(20, 20));//Icon.ExtractAssociatedIcon(proc.StartInfo.FileName.ToString()).ToBitmap();
