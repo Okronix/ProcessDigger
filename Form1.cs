@@ -12,6 +12,7 @@ namespace Process_Digger
 {
     public partial class Form1 : Form
     {
+        int processCount = 0;
         public Form1()
         {
             InitializeComponent();
@@ -20,6 +21,7 @@ namespace Process_Digger
         private void Form1_Load(object sender, EventArgs e)
         {
             update();
+            updateProcess();
         }
 
         void update()
@@ -27,7 +29,6 @@ namespace Process_Digger
             this.Size = Properties.Settings.Default.size;
             this.TopMost = Properties.Settings.Default.topMost;
             поверхВсехОконToolStripMenuItem.Checked = Properties.Settings.Default.topMost;
-            updateProcess();
         }
 
         public void updateProcess()
@@ -57,6 +58,7 @@ namespace Process_Digger
             }
             this.dataGridView1.Sort(this.dataGridView1.Columns[Properties.Settings.Default.sortBy], ListSortDirection.Ascending);
             toolStripStatusLabel1.Text = $"Процессов запущено: {dataGridView1.Rows.Count.ToString()}";
+            processCount = dataGridView1.Rows.Count;
         }
 
         void processKill(int id)
@@ -118,10 +120,8 @@ namespace Process_Digger
 
         private void btnKill_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow.Cells[2].Value != null)
-            {
-                processKill(Convert.ToInt32(dataGridView1.CurrentRow.Cells[2].Value));
-            }
+            FormKillProcess f6 = new FormKillProcess();
+            f6.ShowDialog();
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -185,14 +185,33 @@ namespace Process_Digger
 
         private void Form1_ResizeEnd(object sender, EventArgs e)
         {
-            Properties.Settings.Default.size = this.Size;
-            Properties.Settings.Default.Save();
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                Properties.Settings.Default.size = this.Size;
+                Properties.Settings.Default.Save();
+            }
         }
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormInfo f2 = new FormInfo();
             f2.ShowDialog();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Process.GetProcesses(".").Length != processCount)
+            {
+                updateProcess();
+            }
+        }
+
+        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13 && dataGridView1.CurrentRow.Cells[2].Value != null)
+            {
+                processKill(Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index - 1].Cells[2].Value));
+            }
         }
     }
 }

@@ -38,7 +38,7 @@ namespace Process_Digger
             // 
             // labelEnterProcess
             // 
-            this.labelEnterProcess.Location = new System.Drawing.Point(12, 9);
+            this.labelEnterProcess.Location = new System.Drawing.Point(9, 9);
             this.labelEnterProcess.Name = "labelEnterProcess";
             this.labelEnterProcess.Size = new System.Drawing.Size(248, 18);
             this.labelEnterProcess.TabIndex = 0;

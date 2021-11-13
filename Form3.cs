@@ -31,9 +31,6 @@ namespace Process_Digger
 
         void processStart()
         {
-            StringCollection authorNames = new StringCollection();
-            string[] names = new string[] {};
-            authorNames.AddRange(names);
             if (checkStartSystem.Checked)
             {
                 Process proc = new Process();
