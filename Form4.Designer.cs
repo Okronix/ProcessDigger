@@ -30,32 +30,34 @@ namespace Process_Digger
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboSort = new System.Windows.Forms.ComboBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.comboTheme = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 19);
+            this.label1.Location = new System.Drawing.Point(12, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Сортировка процессов:";
             // 
-            // comboBox1
+            // comboSort
             // 
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboSort.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboSort.FormattingEnabled = true;
+            this.comboSort.Items.AddRange(new object[] {
             "Название",
             "ID"});
-            this.comboBox1.Location = new System.Drawing.Point(148, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.comboSort.Location = new System.Drawing.Point(148, 56);
+            this.comboSort.Name = "comboSort";
+            this.comboSort.Size = new System.Drawing.Size(121, 21);
+            this.comboSort.TabIndex = 1;
             // 
             // btnConfirm
             // 
@@ -71,21 +73,47 @@ namespace Process_Digger
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(15, 46);
+            this.checkBox1.Location = new System.Drawing.Point(15, 86);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(116, 17);
             this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "Поверх всех окон";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // comboTheme
+            // 
+            this.comboTheme.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboTheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTheme.FormattingEnabled = true;
+            this.comboTheme.Items.AddRange(new object[] {
+            "Авто (Системная)",
+            "Светлая",
+            "Темная",
+            "Черная (AMOLED)"});
+            this.comboTheme.Location = new System.Drawing.Point(148, 29);
+            this.comboTheme.Name = "comboTheme";
+            this.comboTheme.Size = new System.Drawing.Size(121, 21);
+            this.comboTheme.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Тема:";
+            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 264);
+            this.Controls.Add(this.comboTheme);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboSort);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -102,8 +130,10 @@ namespace Process_Digger
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboSort;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ComboBox comboTheme;
+        private System.Windows.Forms.Label label2;
     }
 }

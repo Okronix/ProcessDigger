@@ -12,19 +12,18 @@ namespace Process_Digger
         private void FormSettings_Load(object sender, EventArgs e)
         {
             this.TopMost = Properties.Settings.Default.topMost;
-
-            comboBox1.SelectedIndex = Properties.Settings.Default.sortBy - 1;
+            comboTheme.SelectedIndex = Properties.Settings.Default.theme;
+            comboSort.SelectedIndex = Properties.Settings.Default.sortBy - 1;
             checkBox1.Checked = Properties.Settings.Default.topMost;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.sortBy = comboBox1.SelectedIndex + 1;
+            Properties.Settings.Default.theme = comboTheme.SelectedIndex;
+            Properties.Settings.Default.sortBy = comboSort.SelectedIndex + 1;
             Properties.Settings.Default.topMost = checkBox1.Checked;
             Properties.Settings.Default.Save();
             this.Close();
         }
-
-
     }
 }

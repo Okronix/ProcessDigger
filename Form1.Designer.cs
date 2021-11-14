@@ -31,14 +31,16 @@ namespace Process_Digger
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.процессToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuProcess = new System.Windows.Forms.ToolStripMenuItem();
             this.запуститьПроцессToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.завершитьПроцессToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.поверхВсехОконToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьНастройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.информацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuInformation = new System.Windows.Forms.ToolStripMenuItem();
             this.оКомпьютереToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -54,33 +56,42 @@ namespace Process_Digger
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextData.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.ContentPanel.SuspendLayout();
+            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.процессToolStripMenuItem,
-            this.настройкиToolStripMenuItem,
-            this.информацияToolStripMenuItem});
+            this.menuProcess,
+            this.menuSettings,
+            this.menuInformation});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(457, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(471, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // процессToolStripMenuItem
+            // menuProcess
             // 
-            this.процессToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuProcess.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.menuProcess.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.запуститьПроцессToolStripMenuItem,
             this.завершитьПроцессToolStripMenuItem});
-            this.процессToolStripMenuItem.Name = "процессToolStripMenuItem";
-            this.процессToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.процессToolStripMenuItem.Text = "Процесс";
+            this.menuProcess.Name = "menuProcess";
+            this.menuProcess.Size = new System.Drawing.Size(60, 20);
+            this.menuProcess.Text = "Процесс";
             // 
             // запуститьПроцессToolStripMenuItem
             // 
@@ -98,19 +109,20 @@ namespace Process_Digger
             this.завершитьПроцессToolStripMenuItem.Text = "Завершить процессы";
             this.завершитьПроцессToolStripMenuItem.Click += new System.EventHandler(this.btnKill_Click);
             // 
-            // настройкиToolStripMenuItem
+            // menuSettings
             // 
-            this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.menuSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.поверхВсехОконToolStripMenuItem,
             this.открытьНастройкиToolStripMenuItem});
-            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.настройкиToolStripMenuItem.Text = "Настройки";
+            this.menuSettings.Name = "menuSettings";
+            this.menuSettings.Size = new System.Drawing.Size(73, 20);
+            this.menuSettings.Text = "Настройки";
             // 
             // поверхВсехОконToolStripMenuItem
             // 
             this.поверхВсехОконToolStripMenuItem.Name = "поверхВсехОконToolStripMenuItem";
-            this.поверхВсехОконToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.поверхВсехОконToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.поверхВсехОконToolStripMenuItem.Text = "Поверх всех окон";
             this.поверхВсехОконToolStripMenuItem.Click += new System.EventHandler(this.поверхВсехОконToolStripMenuItem_Click);
             // 
@@ -118,31 +130,32 @@ namespace Process_Digger
             // 
             this.открытьНастройкиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("открытьНастройкиToolStripMenuItem.Image")));
             this.открытьНастройкиToolStripMenuItem.Name = "открытьНастройкиToolStripMenuItem";
-            this.открытьНастройкиToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.открытьНастройкиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.открытьНастройкиToolStripMenuItem.Text = "Открыть настройки";
             this.открытьНастройкиToolStripMenuItem.Click += new System.EventHandler(this.открытьНастройкиToolStripMenuItem_Click);
             // 
-            // информацияToolStripMenuItem
+            // menuInformation
             // 
-            this.информацияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuInformation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.menuInformation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.оКомпьютереToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
-            this.информацияToolStripMenuItem.Name = "информацияToolStripMenuItem";
-            this.информацияToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.информацияToolStripMenuItem.Text = "Информация";
+            this.menuInformation.Name = "menuInformation";
+            this.menuInformation.Size = new System.Drawing.Size(82, 20);
+            this.menuInformation.Text = "Информация";
             // 
             // оКомпьютереToolStripMenuItem
             // 
             this.оКомпьютереToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("оКомпьютереToolStripMenuItem.Image")));
             this.оКомпьютереToolStripMenuItem.Name = "оКомпьютереToolStripMenuItem";
-            this.оКомпьютереToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.оКомпьютереToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оКомпьютереToolStripMenuItem.Text = "О компьютере";
             // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("оПрограммеToolStripMenuItem.Image")));
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
@@ -153,6 +166,11 @@ namespace Process_Digger
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
@@ -164,13 +182,22 @@ namespace Process_Digger
             this.Column4});
             this.dataGridView1.ContextMenuStrip = this.contextData;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(457, 469);
+            this.dataGridView1.Size = new System.Drawing.Size(471, 447);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
@@ -214,13 +241,13 @@ namespace Process_Digger
             this.свойстваToolStripMenuItem});
             this.contextData.Name = "contextData";
             this.contextData.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.contextData.Size = new System.Drawing.Size(174, 70);
+            this.contextData.Size = new System.Drawing.Size(181, 92);
             // 
             // завершитьПроцессToolStripMenuItem1
             // 
             this.завершитьПроцессToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("завершитьПроцессToolStripMenuItem1.Image")));
             this.завершитьПроцессToolStripMenuItem1.Name = "завершитьПроцессToolStripMenuItem1";
-            this.завершитьПроцессToolStripMenuItem1.Size = new System.Drawing.Size(173, 22);
+            this.завершитьПроцессToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.завершитьПроцессToolStripMenuItem1.Text = "Завершить процесс";
             this.завершитьПроцессToolStripMenuItem1.Click += new System.EventHandler(this.btnKill_Click);
             // 
@@ -228,24 +255,26 @@ namespace Process_Digger
             // 
             this.завершитьДревоToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("завершитьДревоToolStripMenuItem1.Image")));
             this.завершитьДревоToolStripMenuItem1.Name = "завершитьДревоToolStripMenuItem1";
-            this.завершитьДревоToolStripMenuItem1.Size = new System.Drawing.Size(173, 22);
+            this.завершитьДревоToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.завершитьДревоToolStripMenuItem1.Text = "Завершить древо";
             // 
             // свойстваToolStripMenuItem
             // 
             this.свойстваToolStripMenuItem.Name = "свойстваToolStripMenuItem";
-            this.свойстваToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.свойстваToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.свойстваToolStripMenuItem.Text = "Свойства";
             this.свойстваToolStripMenuItem.Click += new System.EventHandler(this.свойстваToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 471);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip1.Size = new System.Drawing.Size(457, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(471, 22);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -261,18 +290,49 @@ namespace Process_Digger
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(378, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // toolStripContainer1
+            // 
+            // 
+            // toolStripContainer1.BottomToolStripPanel
+            // 
+            this.toolStripContainer1.BottomToolStripPanel.Controls.Add(this.statusStrip1);
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.button1);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView1);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(471, 447);
+            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.Size = new System.Drawing.Size(471, 493);
+            this.toolStripContainer1.TabIndex = 8;
+            this.toolStripContainer1.Text = "toolStripContainer1";
+            // 
+            // toolStripContainer1.TopToolStripPanel
+            // 
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(457, 493);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(471, 493);
+            this.Controls.Add(this.toolStripContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(460, 528);
+            this.MinimumSize = new System.Drawing.Size(487, 528);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Process Digger";
@@ -285,8 +345,14 @@ namespace Process_Digger
             this.contextData.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.BottomToolStripPanel.PerformLayout();
+            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -296,9 +362,9 @@ namespace Process_Digger
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripMenuItem процессToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem информацияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuProcess;
+        private System.Windows.Forms.ToolStripMenuItem menuSettings;
+        private System.Windows.Forms.ToolStripMenuItem menuInformation;
         private System.Windows.Forms.ToolStripMenuItem запуститьПроцессToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem завершитьПроцессToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextData;
@@ -315,6 +381,8 @@ namespace Process_Digger
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
     }
 }
 

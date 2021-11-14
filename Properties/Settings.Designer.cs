@@ -58,5 +58,17 @@ namespace Process_Digger.Properties {
                 this["topMost"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int theme {
+            get {
+                return ((int)(this["theme"]));
+            }
+            set {
+                this["theme"] = value;
+            }
+        }
     }
 }
