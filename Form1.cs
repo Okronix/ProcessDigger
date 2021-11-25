@@ -46,7 +46,8 @@ namespace Process_Digger
                 {
                     dataGridView1.Rows[i].Cells["ColumnPic"].Value = new Bitmap(new Bitmap(Icon.ExtractAssociatedIcon(proc.MainModule.FileName.ToString()).ToBitmap()), new Size(20, 20));//Icon.ExtractAssociatedIcon(proc.StartInfo.FileName.ToString()).ToBitmap();
                 }
-                catch {
+                catch
+                {
                     dataGridView1.Rows[i].Cells["ColumnPic"].Value = new Bitmap(new Bitmap(Properties.Resources.icoWinStandart.ToBitmap()));
                 }
 
@@ -54,7 +55,6 @@ namespace Process_Digger
                 dataGridView1.Rows[i].Cells["ColumnNum"].Value = proc.Id;
                 dataGridView1.Rows[i].Cells["Column3"].Value = (proc.WorkingSet64 - proc.PrivateMemorySize64) / 1048576 + " MB";
                 dataGridView1.Rows[i].Cells["Column4"].Value = proc.WorkingSet64 / 1048576 + " MB";
-                //dataGridView1.Rows[i].Cells["Column4"].Value = proc.VirtualMemorySize64 / 1048576 + " MB";
                 i++;
             }
             this.dataGridView1.Sort(this.dataGridView1.Columns[Properties.Settings.Default.sortBy], ListSortDirection.Ascending);
@@ -75,47 +75,27 @@ namespace Process_Digger
 
         }
 
-        void treeProcessKill(int pid)
+        void allProcessKill(string name)
         {
-            if (pid == 0)
-            {
-                return;
-            }
-
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("Select * From Win32_Process Where ParentProcessID=" + pid);
-            ManagementObjectCollection objectCollection = searcher.Get();
-
-            foreach (ManagementObject obj in objectCollection)
-            {
-                treeProcessKill(Convert.ToInt32(obj["Process"]));
-            }
-
             try
             {
-                Process p = Process.GetProcessById(pid);
-                p.Kill();
-                p.WaitForExit();
+                if (Process.GetProcessesByName(name).Count() != 0)
+                {
+                    var process = from pr in Process.GetProcessesByName(name) orderby pr.Id select pr; ;
+                    foreach (var proc in process)
+                    {
+                        proc.Kill();
+                        proc.WaitForExit();
+                    }
+                }
+                else { MessageBox.Show($"Процесс \"{name}\" не найден", "Process Digger - Ошибка завершения процесса", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
-            catch (ArgumentException) { }
-        }
-
-        int GetParentProcessId(Process p)
-        {
-            int parentID = 0;
-            try
-            {
-                ManagementObject managementObject = new ManagementObject("win32_process.handle='" + p.Id + "'");
-                managementObject.Get();
-                parentID = Convert.ToInt32(managementObject["ParentProcessId"]);
-            }
-            catch (Exception) { }
-
-            return parentID;
+            catch { MessageBox.Show($"Процесс \"{name}\" не удалось завершить", "Process Digger - Ошибка завершения процесса", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         private void запуститьПроцессToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormNewProcess   f3 = new FormNewProcess();
+            FormNewProcess f3 = new FormNewProcess();
             f3.ShowDialog();
         }
 
@@ -136,11 +116,6 @@ namespace Process_Digger
                 }
                 catch { }
             }
-        }
-
-        private void toolUpdate_Click(object sender, EventArgs e)
-        {
-            updateProcess();
         }
 
         private void свойстваToolStripMenuItem_Click(object sender, EventArgs e)
@@ -274,6 +249,7 @@ namespace Process_Digger
                     }
             }
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             statusStrip1.ForeColor = Color.White;
@@ -312,6 +288,45 @@ namespace Process_Digger
             dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(32, 32, 32);
 
             //Util.Find<HScrollBar>(dataGridView1).BackColor = Color.Red;
+        }
+
+        private void завершитьПроцессToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            processKill(Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value));
+        }
+
+        void treeProcessKill(int pid)
+        {
+            if (pid == 0)
+            {
+                return;
+            }
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher
+                    ("Select * From Win32_Process Where ParentProcessID=" + pid);
+            ManagementObjectCollection moc = searcher.Get();
+            foreach (ManagementObject mo in moc)
+            {
+                treeProcessKill(Convert.ToInt32(mo["ProcessID"]));
+            }
+            try
+            {
+                Process proc = Process.GetProcessById(pid);
+                proc.Kill();
+            }
+            catch (ArgumentException)
+            {
+                // Process already exited.
+            }
+        }
+
+        private void завершитьПроцессыToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            allProcessKill(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString().Replace(".exe", ""));
+        }
+
+        private void завершитьДервеоToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            processKill(Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value));
         }
     }
 }

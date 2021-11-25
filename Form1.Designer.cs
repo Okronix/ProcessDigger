@@ -30,9 +30,9 @@ namespace Process_Digger
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuProcess = new System.Windows.Forms.ToolStripMenuItem();
             this.запуститьПроцессToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +51,8 @@ namespace Process_Digger
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextData = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.завершитьПроцессToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.завершитьДревоToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.завершитьДеревоToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.завершитьДервеоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.свойстваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -95,7 +96,7 @@ namespace Process_Digger
             // 
             // запуститьПроцессToolStripMenuItem
             // 
-            this.запуститьПроцессToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("запуститьПроцессToolStripMenuItem.Image")));
+            this.запуститьПроцессToolStripMenuItem.Image = global::Process_Digger.Properties.Resources.icon_ProcessStart;
             this.запуститьПроцессToolStripMenuItem.Name = "запуститьПроцессToolStripMenuItem";
             this.запуститьПроцессToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.запуститьПроцессToolStripMenuItem.Text = "Запустить процесс";
@@ -103,7 +104,7 @@ namespace Process_Digger
             // 
             // завершитьПроцессToolStripMenuItem
             // 
-            this.завершитьПроцессToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("завершитьПроцессToolStripMenuItem.Image")));
+            this.завершитьПроцессToolStripMenuItem.Image = global::Process_Digger.Properties.Resources.icon_ProcessesKill;
             this.завершитьПроцессToolStripMenuItem.Name = "завершитьПроцессToolStripMenuItem";
             this.завершитьПроцессToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.завершитьПроцессToolStripMenuItem.Text = "Завершить процессы";
@@ -128,7 +129,7 @@ namespace Process_Digger
             // 
             // открытьНастройкиToolStripMenuItem
             // 
-            this.открытьНастройкиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("открытьНастройкиToolStripMenuItem.Image")));
+            this.открытьНастройкиToolStripMenuItem.Image = global::Process_Digger.Properties.Resources.icon_Settings;
             this.открытьНастройкиToolStripMenuItem.Name = "открытьНастройкиToolStripMenuItem";
             this.открытьНастройкиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.открытьНастройкиToolStripMenuItem.Text = "Открыть настройки";
@@ -146,14 +147,14 @@ namespace Process_Digger
             // 
             // оКомпьютереToolStripMenuItem
             // 
-            this.оКомпьютереToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("оКомпьютереToolStripMenuItem.Image")));
+            this.оКомпьютереToolStripMenuItem.Image = global::Process_Digger.Properties.Resources.icon_AboutPC;
             this.оКомпьютереToolStripMenuItem.Name = "оКомпьютереToolStripMenuItem";
             this.оКомпьютереToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оКомпьютереToolStripMenuItem.Text = "О компьютере";
             // 
             // оПрограммеToolStripMenuItem
             // 
-            this.оПрограммеToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("оПрограммеToolStripMenuItem.Image")));
+            this.оПрограммеToolStripMenuItem.Image = global::Process_Digger.Properties.Resources.icon_AboutProgram;
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
             this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
@@ -237,31 +238,43 @@ namespace Process_Digger
             // 
             this.contextData.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.завершитьПроцессToolStripMenuItem1,
-            this.завершитьДревоToolStripMenuItem1,
+            this.завершитьДеревоToolStripMenuItem1,
+            this.завершитьДервеоToolStripMenuItem,
             this.свойстваToolStripMenuItem});
             this.contextData.Name = "contextData";
             this.contextData.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.contextData.Size = new System.Drawing.Size(181, 92);
+            this.contextData.Size = new System.Drawing.Size(182, 92);
             // 
             // завершитьПроцессToolStripMenuItem1
             // 
-            this.завершитьПроцессToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("завершитьПроцессToolStripMenuItem1.Image")));
+            this.завершитьПроцессToolStripMenuItem1.Image = global::Process_Digger.Properties.Resources.icon_ProcessKill;
             this.завершитьПроцессToolStripMenuItem1.Name = "завершитьПроцессToolStripMenuItem1";
-            this.завершитьПроцессToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.завершитьПроцессToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
             this.завершитьПроцессToolStripMenuItem1.Text = "Завершить процесс";
-            this.завершитьПроцессToolStripMenuItem1.Click += new System.EventHandler(this.btnKill_Click);
+            this.завершитьПроцессToolStripMenuItem1.Click += new System.EventHandler(this.завершитьПроцессToolStripMenuItem1_Click);
             // 
-            // завершитьДревоToolStripMenuItem1
+            // завершитьДеревоToolStripMenuItem1
             // 
-            this.завершитьДревоToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("завершитьДревоToolStripMenuItem1.Image")));
-            this.завершитьДревоToolStripMenuItem1.Name = "завершитьДревоToolStripMenuItem1";
-            this.завершитьДревоToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.завершитьДревоToolStripMenuItem1.Text = "Завершить древо";
+            this.завершитьДеревоToolStripMenuItem1.Image = global::Process_Digger.Properties.Resources.icon_ProcessesKill;
+            this.завершитьДеревоToolStripMenuItem1.Name = "завершитьДеревоToolStripMenuItem1";
+            this.завершитьДеревоToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            this.завершитьДеревоToolStripMenuItem1.Text = "Завершить процессы";
+            this.завершитьДеревоToolStripMenuItem1.Click += new System.EventHandler(this.завершитьПроцессыToolStripMenuItem1_Click);
+            // 
+            // завершитьДервеоToolStripMenuItem
+            // 
+            this.завершитьДервеоToolStripMenuItem.Image = global::Process_Digger.Properties.Resources.icon_TreeProcessKill;
+            this.завершитьДервеоToolStripMenuItem.Name = "завершитьДервеоToolStripMenuItem";
+            this.завершитьДервеоToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.завершитьДервеоToolStripMenuItem.Text = "Завершить дервео";
+            this.завершитьДервеоToolStripMenuItem.Click += new System.EventHandler(this.завершитьДервеоToolStripMenuItem_Click);
             // 
             // свойстваToolStripMenuItem
             // 
+            this.свойстваToolStripMenuItem.Image = global::Process_Digger.Properties.Resources.icon_Info;
+            this.свойстваToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.свойстваToolStripMenuItem.Name = "свойстваToolStripMenuItem";
-            this.свойстваToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.свойстваToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.свойстваToolStripMenuItem.Text = "Свойства";
             this.свойстваToolStripMenuItem.Click += new System.EventHandler(this.свойстваToolStripMenuItem_Click);
             // 
@@ -292,11 +305,11 @@ namespace Process_Digger
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(378, 3);
+            this.button1.Location = new System.Drawing.Point(432, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(23, 23);
             this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
+            this.button1.Text = "🎨";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -369,7 +382,7 @@ namespace Process_Digger
         private System.Windows.Forms.ToolStripMenuItem завершитьПроцессToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextData;
         private System.Windows.Forms.ToolStripMenuItem завершитьПроцессToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem завершитьДревоToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem завершитьДеревоToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem свойстваToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьНастройкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem поверхВсехОконToolStripMenuItem;
@@ -383,6 +396,7 @@ namespace Process_Digger
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStripMenuItem завершитьДервеоToolStripMenuItem;
     }
 }
 

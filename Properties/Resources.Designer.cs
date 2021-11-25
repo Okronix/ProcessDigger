@@ -63,9 +63,9 @@ namespace Process_Digger.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ico_GH {
+        internal static System.Drawing.Bitmap icon_AboutPC {
             get {
-                object obj = ResourceManager.GetObject("ico_GH", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_AboutPC", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Process_Digger.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ico_NAB {
+        internal static System.Drawing.Bitmap icon_AboutProgram {
             get {
-                object obj = ResourceManager.GetObject("ico_NAB", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_AboutProgram", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,89 @@ namespace Process_Digger.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ico_TG {
+        internal static System.Drawing.Bitmap icon_GH {
             get {
-                object obj = ResourceManager.GetObject("ico_TG", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_GH", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_Info {
+            get {
+                object obj = ResourceManager.GetObject("icon_Info", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_NAB {
+            get {
+                object obj = ResourceManager.GetObject("icon_NAB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_ProcessesKill {
+            get {
+                object obj = ResourceManager.GetObject("icon_ProcessesKill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_ProcessKill {
+            get {
+                object obj = ResourceManager.GetObject("icon_ProcessKill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_ProcessStart {
+            get {
+                object obj = ResourceManager.GetObject("icon_ProcessStart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_Settings {
+            get {
+                object obj = ResourceManager.GetObject("icon_Settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_TG {
+            get {
+                object obj = ResourceManager.GetObject("icon_TG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_TreeProcessKill {
+            get {
+                object obj = ResourceManager.GetObject("icon_TreeProcessKill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

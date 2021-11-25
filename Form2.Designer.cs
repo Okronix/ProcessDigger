@@ -98,7 +98,7 @@ namespace Process_Digger
             // pictureTG
             // 
             this.pictureTG.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureTG.Image = global::Process_Digger.Properties.Resources.ico_TG;
+            this.pictureTG.Image = global::Process_Digger.Properties.Resources.icon_TG;
             this.pictureTG.Location = new System.Drawing.Point(212, 217);
             this.pictureTG.Name = "pictureTG";
             this.pictureTG.Size = new System.Drawing.Size(25, 25);
@@ -110,7 +110,7 @@ namespace Process_Digger
             // pictureNAB
             // 
             this.pictureNAB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureNAB.Image = global::Process_Digger.Properties.Resources.ico_NAB;
+            this.pictureNAB.Image = global::Process_Digger.Properties.Resources.icon_NAB;
             this.pictureNAB.Location = new System.Drawing.Point(274, 217);
             this.pictureNAB.Name = "pictureNAB";
             this.pictureNAB.Size = new System.Drawing.Size(25, 25);
@@ -122,7 +122,7 @@ namespace Process_Digger
             // pictureGH
             // 
             this.pictureGH.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureGH.Image = global::Process_Digger.Properties.Resources.ico_GH;
+            this.pictureGH.Image = global::Process_Digger.Properties.Resources.icon_GH;
             this.pictureGH.Location = new System.Drawing.Point(243, 217);
             this.pictureGH.Name = "pictureGH";
             this.pictureGH.Size = new System.Drawing.Size(25, 25);
