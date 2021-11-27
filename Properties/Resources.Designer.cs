@@ -19,7 +19,7 @@ namespace Process_Digger.Properties {
     // с помощью такого средства, как ResGen или Visual Studio.
     // Чтобы добавить или удалить член, измените файл .ResX и снова запустите ResGen
     // с параметром /str или перестройте свой проект VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,6 +61,26 @@ namespace Process_Digger.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon ico_Main {
+            get {
+                object obj = ResourceManager.GetObject("ico_Main", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon ico_WinStandart {
+            get {
+                object obj = ResourceManager.GetObject("ico_WinStandart", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap icon_AboutPC {
@@ -93,6 +113,16 @@ namespace Process_Digger.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_GHLight {
+            get {
+                object obj = ResourceManager.GetObject("icon_GHLight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_Info {
             get {
                 object obj = ResourceManager.GetObject("icon_Info", resourceCulture);
@@ -106,6 +136,16 @@ namespace Process_Digger.Properties {
         internal static System.Drawing.Bitmap icon_NAB {
             get {
                 object obj = ResourceManager.GetObject("icon_NAB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_NABLight {
+            get {
+                object obj = ResourceManager.GetObject("icon_NABLight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -167,16 +207,6 @@ namespace Process_Digger.Properties {
             get {
                 object obj = ResourceManager.GetObject("icon_TreeProcessKill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
-        /// </summary>
-        internal static System.Drawing.Icon icoWinStandart {
-            get {
-                object obj = ResourceManager.GetObject("icoWinStandart", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
             }
         }
     }

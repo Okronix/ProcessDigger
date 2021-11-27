@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Data;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -21,6 +23,7 @@ namespace Process_Digger
         private void FormKillProcess_Load(object sender, EventArgs e)
         {
             this.TopMost = Properties.Settings.Default.topMost;
+            setTheme();
         }
 
         private void textProcessName_KeyPress(object sender, KeyPressEventArgs e)
@@ -58,6 +61,44 @@ namespace Process_Digger
         private void btnStart_Click(object sender, EventArgs e)
         {
             processKill();
+        }
+        void setTheme()
+        {
+            switch (Properties.Settings.Default.theme)
+            {
+                case 0: //авто
+                    {
+                        RegistryKey lightThemeStatus = Registry.CurrentUser.OpenSubKey("SOFTWARE").OpenSubKey("Microsoft").OpenSubKey("Windows").OpenSubKey("CurrentVersion").OpenSubKey("Themes").OpenSubKey("Personalize");
+
+                        if (Convert.ToInt32(lightThemeStatus.GetValue("AppsUseLightTheme")) == 0)
+                        {
+                            setDarkTheme();
+                        }
+
+                        break;
+                    }
+                case 2: //темная
+                    {
+                        setDarkTheme();
+                        break;
+                    }
+                case 3: //черная(AMOLED)
+                    {
+                        break;
+                    }
+            }
+        }
+
+        void setDarkTheme()
+        {
+            this.BackColor = Color.FromArgb(25, 25, 25);
+            labelEnterProcess.ForeColor = Color.White;
+            textProcessName.ForeColor = Color.White;
+            textProcessName.BackColor = Color.FromArgb(32, 32, 32);
+            btnStart.ForeColor = Color.White;
+            btnStart.BackColor = Color.FromArgb(32, 32, 32);
+            btnCancel.ForeColor = Color.White;
+            btnCancel.BackColor = Color.FromArgb(32, 32, 32);
         }
     }
 }

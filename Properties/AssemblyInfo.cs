@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
 [assembly: AssemblyTitle("Process Digger")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Менеджер процессов")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Process Digger")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCopyright("Copyright ©  2021 Okronix")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

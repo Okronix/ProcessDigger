@@ -127,7 +127,7 @@
   <data name="icon_NAB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ico_NAB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icoWinStandart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ico_WinStandart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icoWinStandart.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_AboutPC" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -153,5 +153,14 @@
   </data>
   <data name="icon_TreeProcessKill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconTreeProcessKill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ico_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_Main.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_GHLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GitHub-Mark-Light-32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_NABLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ico_NALight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

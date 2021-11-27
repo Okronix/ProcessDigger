@@ -30,9 +30,9 @@ namespace Process_Digger
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInfo));
-            this.LabelName = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelNameDeveloper = new System.Windows.Forms.Label();
+            this.labelNameProgram = new System.Windows.Forms.Label();
+            this.labelDescription = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureTG = new System.Windows.Forms.PictureBox();
@@ -44,34 +44,34 @@ namespace Process_Digger
             ((System.ComponentModel.ISupportInitialize)(this.pictureGH)).BeginInit();
             this.SuspendLayout();
             // 
-            // LabelName
+            // labelNameDeveloper
             // 
-            this.LabelName.AutoSize = true;
-            this.LabelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelName.Location = new System.Drawing.Point(156, 224);
-            this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(50, 13);
-            this.LabelName.TabIndex = 3;
-            this.LabelName.Text = "Okronix";
+            this.labelNameDeveloper.AutoSize = true;
+            this.labelNameDeveloper.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNameDeveloper.Location = new System.Drawing.Point(156, 224);
+            this.labelNameDeveloper.Name = "labelNameDeveloper";
+            this.labelNameDeveloper.Size = new System.Drawing.Size(50, 13);
+            this.labelNameDeveloper.TabIndex = 3;
+            this.labelNameDeveloper.Text = "Okronix";
             // 
-            // label1
+            // labelNameProgram
             // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(83, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 65);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Process Digger";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelNameProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNameProgram.Location = new System.Drawing.Point(83, 12);
+            this.labelNameProgram.Name = "labelNameProgram";
+            this.labelNameProgram.Size = new System.Drawing.Size(216, 65);
+            this.labelNameProgram.TabIndex = 5;
+            this.labelNameProgram.Text = "Process Digger";
+            this.labelNameProgram.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // labelDescription
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(9, 105);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(290, 75);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Process Digger - интуитивно понятная утилита для упрощенной работы с процессами н" +
+            this.labelDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelDescription.Location = new System.Drawing.Point(9, 105);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(290, 75);
+            this.labelDescription.TabIndex = 6;
+            this.labelDescription.Text = "Process Digger - интуитивно понятная утилита для упрощенной работы с процессами н" +
     "а ОС Windows";
             // 
             // btnOk
@@ -137,10 +137,10 @@ namespace Process_Digger
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(311, 256);
             this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelDescription);
+            this.Controls.Add(this.labelNameProgram);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.LabelName);
+            this.Controls.Add(this.labelNameDeveloper);
             this.Controls.Add(this.pictureTG);
             this.Controls.Add(this.pictureNAB);
             this.Controls.Add(this.pictureGH);
@@ -166,10 +166,10 @@ namespace Process_Digger
         private System.Windows.Forms.PictureBox pictureGH;
         private System.Windows.Forms.PictureBox pictureNAB;
         private System.Windows.Forms.PictureBox pictureTG;
-        private System.Windows.Forms.Label LabelName;
+        private System.Windows.Forms.Label labelNameDeveloper;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelNameProgram;
+        private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Button btnOk;
     }
 }

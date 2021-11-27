@@ -32,6 +32,8 @@ namespace Process_Digger
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuProcess = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,21 +46,23 @@ namespace Process_Digger
             this.оКомпьютереToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ColumnPic = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextData = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.завершитьПроцессToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.завершитьДеревоToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.завершитьПроцессыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.завершитьДервеоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.свойстваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelPath = new System.Windows.Forms.Label();
+            this.labelNameWindow = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.ColumnPic = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextData.SuspendLayout();
@@ -67,6 +71,7 @@ namespace Process_Digger
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -80,7 +85,7 @@ namespace Process_Digger
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(471, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(645, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -123,7 +128,7 @@ namespace Process_Digger
             // поверхВсехОконToolStripMenuItem
             // 
             this.поверхВсехОконToolStripMenuItem.Name = "поверхВсехОконToolStripMenuItem";
-            this.поверхВсехОконToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.поверхВсехОконToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.поверхВсехОконToolStripMenuItem.Text = "Поверх всех окон";
             this.поверхВсехОконToolStripMenuItem.Click += new System.EventHandler(this.поверхВсехОконToolStripMenuItem_Click);
             // 
@@ -131,7 +136,7 @@ namespace Process_Digger
             // 
             this.открытьНастройкиToolStripMenuItem.Image = global::Process_Digger.Properties.Resources.icon_Settings;
             this.открытьНастройкиToolStripMenuItem.Name = "открытьНастройкиToolStripMenuItem";
-            this.открытьНастройкиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.открытьНастройкиToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.открытьНастройкиToolStripMenuItem.Text = "Открыть настройки";
             this.открытьНастройкиToolStripMenuItem.Click += new System.EventHandler(this.открытьНастройкиToolStripMenuItem_Click);
             // 
@@ -149,14 +154,14 @@ namespace Process_Digger
             // 
             this.оКомпьютереToolStripMenuItem.Image = global::Process_Digger.Properties.Resources.icon_AboutPC;
             this.оКомпьютереToolStripMenuItem.Name = "оКомпьютереToolStripMenuItem";
-            this.оКомпьютереToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оКомпьютереToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.оКомпьютереToolStripMenuItem.Text = "О компьютере";
             // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Image = global::Process_Digger.Properties.Resources.icon_AboutProgram;
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
@@ -168,77 +173,63 @@ namespace Process_Digger
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnPic,
             this.ColumnName,
             this.ColumnNum,
-            this.Column3,
-            this.Column4});
+            this.Column3});
             this.dataGridView1.ContextMenuStrip = this.contextData;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(471, 447);
+            this.dataGridView1.Size = new System.Drawing.Size(357, 447);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
-            // 
-            // ColumnPic
-            // 
-            this.ColumnPic.HeaderText = "";
-            this.ColumnPic.Name = "ColumnPic";
-            this.ColumnPic.ReadOnly = true;
-            this.ColumnPic.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnPic.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ColumnPic.Width = 25;
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.HeaderText = "Название";
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.Width = 180;
-            // 
-            // ColumnNum
-            // 
-            this.ColumnNum.HeaderText = "ID";
-            this.ColumnNum.Name = "ColumnNum";
-            this.ColumnNum.Width = 50;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Память";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Память";
-            this.Column4.Name = "Column4";
             // 
             // contextData
             // 
             this.contextData.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.завершитьПроцессToolStripMenuItem1,
-            this.завершитьДеревоToolStripMenuItem1,
+            this.завершитьПроцессыToolStripMenuItem1,
             this.завершитьДервеоToolStripMenuItem,
             this.свойстваToolStripMenuItem});
             this.contextData.Name = "contextData";
@@ -253,13 +244,14 @@ namespace Process_Digger
             this.завершитьПроцессToolStripMenuItem1.Text = "Завершить процесс";
             this.завершитьПроцессToolStripMenuItem1.Click += new System.EventHandler(this.завершитьПроцессToolStripMenuItem1_Click);
             // 
-            // завершитьДеревоToolStripMenuItem1
+            // завершитьПроцессыToolStripMenuItem1
             // 
-            this.завершитьДеревоToolStripMenuItem1.Image = global::Process_Digger.Properties.Resources.icon_ProcessesKill;
-            this.завершитьДеревоToolStripMenuItem1.Name = "завершитьДеревоToolStripMenuItem1";
-            this.завершитьДеревоToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
-            this.завершитьДеревоToolStripMenuItem1.Text = "Завершить процессы";
-            this.завершитьДеревоToolStripMenuItem1.Click += new System.EventHandler(this.завершитьПроцессыToolStripMenuItem1_Click);
+            this.завершитьПроцессыToolStripMenuItem1.BackColor = System.Drawing.SystemColors.Control;
+            this.завершитьПроцессыToolStripMenuItem1.Image = global::Process_Digger.Properties.Resources.icon_ProcessesKill;
+            this.завершитьПроцессыToolStripMenuItem1.Name = "завершитьПроцессыToolStripMenuItem1";
+            this.завершитьПроцессыToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            this.завершитьПроцессыToolStripMenuItem1.Text = "Завершить процессы";
+            this.завершитьПроцессыToolStripMenuItem1.Click += new System.EventHandler(this.завершитьПроцессыToolStripMenuItem1_Click);
             // 
             // завершитьДервеоToolStripMenuItem
             // 
@@ -287,7 +279,7 @@ namespace Process_Digger
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip1.Size = new System.Drawing.Size(471, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(645, 22);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -303,16 +295,6 @@ namespace Process_Digger
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(432, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(23, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "🎨";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // toolStripContainer1
             // 
             // 
@@ -322,13 +304,19 @@ namespace Process_Digger
             // 
             // toolStripContainer1.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.button1);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.panel1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(471, 447);
+            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(645, 447);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(471, 493);
+            // 
+            // toolStripContainer1.RightToolStripPanel
+            // 
+            this.toolStripContainer1.RightToolStripPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.toolStripContainer1.Size = new System.Drawing.Size(645, 493);
             this.toolStripContainer1.TabIndex = 8;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -336,15 +324,89 @@ namespace Process_Digger
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.labelPath);
+            this.panel1.Controls.Add(this.labelNameWindow);
+            this.panel1.Controls.Add(this.labelName);
+            this.panel1.Location = new System.Drawing.Point(359, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(286, 447);
+            this.panel1.TabIndex = 8;
+            // 
+            // labelPath
+            // 
+            this.labelPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPath.AutoEllipsis = true;
+            this.labelPath.Location = new System.Drawing.Point(3, 57);
+            this.labelPath.Name = "labelPath";
+            this.labelPath.Size = new System.Drawing.Size(280, 44);
+            this.labelPath.TabIndex = 2;
+            this.labelPath.Text = "Путь к файлу:";
+            // 
+            // labelNameWindow
+            // 
+            this.labelNameWindow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelNameWindow.Location = new System.Drawing.Point(3, 34);
+            this.labelNameWindow.Name = "labelNameWindow";
+            this.labelNameWindow.Size = new System.Drawing.Size(280, 23);
+            this.labelNameWindow.TabIndex = 1;
+            this.labelNameWindow.Text = "Имя окна:";
+            // 
+            // labelName
+            // 
+            this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelName.Location = new System.Drawing.Point(3, 11);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(280, 23);
+            this.labelName.TabIndex = 0;
+            this.labelName.Text = "Название:";
+            // 
+            // ColumnPic
+            // 
+            this.ColumnPic.HeaderText = "";
+            this.ColumnPic.Name = "ColumnPic";
+            this.ColumnPic.ReadOnly = true;
+            this.ColumnPic.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnPic.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColumnPic.Width = 25;
+            // 
+            // ColumnName
+            // 
+            this.ColumnName.HeaderText = "Название";
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            this.ColumnName.Width = 180;
+            // 
+            // ColumnNum
+            // 
+            this.ColumnNum.HeaderText = "ID";
+            this.ColumnNum.Name = "ColumnNum";
+            this.ColumnNum.ReadOnly = true;
+            this.ColumnNum.Width = 50;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Память";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(471, 493);
+            this.ClientSize = new System.Drawing.Size(645, 493);
             this.Controls.Add(this.toolStripContainer1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(487, 528);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -365,6 +427,7 @@ namespace Process_Digger
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -382,21 +445,23 @@ namespace Process_Digger
         private System.Windows.Forms.ToolStripMenuItem завершитьПроцессToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextData;
         private System.Windows.Forms.ToolStripMenuItem завершитьПроцессToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem завершитьДеревоToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem завершитьПроцессыToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem свойстваToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьНастройкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem поверхВсехОконToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оКомпьютереToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStripMenuItem завершитьДервеоToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelPath;
+        private System.Windows.Forms.Label labelNameWindow;
+        private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.DataGridViewImageColumn ColumnPic;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.ToolStripMenuItem завершитьДервеоToolStripMenuItem;
     }
 }
 
