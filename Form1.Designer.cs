@@ -54,6 +54,7 @@ namespace Process_Digger
             this.labelPath = new System.Windows.Forms.Label();
             this.labelNameWindow = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuProcess = new System.Windows.Forms.ToolStripMenuItem();
             this.запуститьПроцессToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.завершитьПроцессToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,6 @@ namespace Process_Digger
             this.menuInformation = new System.Windows.Forms.ToolStripMenuItem();
             this.оКомпьютереToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.textFind = new System.Windows.Forms.ToolStripTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextData.SuspendLayout();
@@ -130,7 +130,7 @@ namespace Process_Digger
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(357, 422);
+            this.dataGridView1.Size = new System.Drawing.Size(357, 448);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
@@ -247,7 +247,7 @@ namespace Process_Digger
             this.toolStripContainer1.ContentPanel.Controls.Add(this.panel1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView1);
             this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(645, 446);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(645, 447);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -274,7 +274,7 @@ namespace Process_Digger
             this.panel1.Controls.Add(this.labelName);
             this.panel1.Location = new System.Drawing.Point(359, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(286, 422);
+            this.panel1.Size = new System.Drawing.Size(286, 423);
             this.panel1.TabIndex = 8;
             // 
             // labelDescription
@@ -316,6 +316,22 @@ namespace Process_Digger
             this.labelName.TabIndex = 0;
             this.labelName.Text = "Название:";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuProcess,
+            this.menuSettings,
+            this.menuInformation,
+            this.textFind});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(645, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // menuProcess
             // 
             this.menuProcess.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -323,7 +339,7 @@ namespace Process_Digger
             this.запуститьПроцессToolStripMenuItem,
             this.завершитьПроцессToolStripMenuItem});
             this.menuProcess.Name = "menuProcess";
-            this.menuProcess.Size = new System.Drawing.Size(60, 21);
+            this.menuProcess.Size = new System.Drawing.Size(60, 20);
             this.menuProcess.Text = "Процесс";
             // 
             // запуститьПроцессToolStripMenuItem
@@ -349,7 +365,7 @@ namespace Process_Digger
             this.поверхВсехОконToolStripMenuItem,
             this.открытьНастройкиToolStripMenuItem});
             this.menuSettings.Name = "menuSettings";
-            this.menuSettings.Size = new System.Drawing.Size(73, 21);
+            this.menuSettings.Size = new System.Drawing.Size(73, 20);
             this.menuSettings.Text = "Настройки";
             // 
             // поверхВсехОконToolStripMenuItem
@@ -374,7 +390,7 @@ namespace Process_Digger
             this.оКомпьютереToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
             this.menuInformation.Name = "menuInformation";
-            this.menuInformation.Size = new System.Drawing.Size(82, 21);
+            this.menuInformation.Size = new System.Drawing.Size(82, 20);
             this.menuInformation.Text = "Информация";
             // 
             // оКомпьютереToolStripMenuItem
@@ -392,29 +408,17 @@ namespace Process_Digger
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuProcess,
-            this.menuSettings,
-            this.menuInformation,
-            this.textFind});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(645, 25);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // textFind
             // 
-            this.textFind.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.textFind.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textFind.Font = new System.Drawing.Font("Tahoma", 8F);
             this.textFind.Name = "textFind";
-            this.textFind.Size = new System.Drawing.Size(100, 21);
+            this.textFind.Size = new System.Drawing.Size(100, 20);
+            this.textFind.Text = "Поиск процесса";
             this.textFind.ToolTipText = "Поиск процесса";
+            this.textFind.Leave += new System.EventHandler(this.textFind_Leave);
             this.textFind.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textFind_KeyPress);
+            this.textFind.Click += new System.EventHandler(this.textFind_Click);
             // 
             // Form1
             // 

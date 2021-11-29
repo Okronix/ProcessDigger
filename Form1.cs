@@ -18,8 +18,6 @@ namespace Process_Digger
         {
             InitializeComponent();
         }
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
             setTheme();
@@ -37,6 +35,14 @@ namespace Process_Digger
 
         public void updateProcess()
         {
+            string selectedProcess = "";
+            try
+            {
+                selectedProcess = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
+            }
+            catch {}
+
+            
             dataGridView1.Rows.Clear();
             var allProcess = from pr in Process.GetProcesses(".")
                              orderby pr.Id
@@ -62,6 +68,8 @@ namespace Process_Digger
             this.dataGridView1.Sort(this.dataGridView1.Columns[Properties.Settings.Default.sortBy], ListSortDirection.Ascending);
             toolStripStatusLabel1.Text = $"Процессов запущено: {dataGridView1.Rows.Count.ToString()}";
             processCount = dataGridView1.Rows.Count;
+
+            findProcess(selectedProcess);
         }
 
         void processKill(int id)
@@ -269,6 +277,9 @@ namespace Process_Digger
             оПрограммеToolStripMenuItem.ForeColor = Color.White;
             оПрограммеToolStripMenuItem.BackColor = Color.FromArgb(43, 43, 43);
 
+            textFind.ForeColor = Color.White;
+            textFind.BackColor = Color.FromArgb(52, 52, 52);
+
             contextData.BackColor = Color.FromArgb(43, 43, 43);
             contextData.ForeColor = Color.White;
             завершитьПроцессToolStripMenuItem1.BackColor = Color.FromArgb(43, 43, 43);
@@ -381,23 +392,45 @@ namespace Process_Digger
         {
             if (e.KeyChar == (char)13)
             {
-                string findText = textFind.Text.ToLower();
-                if (findText != "")
+                if (textFind.Text != "")
                 {
-                    for (int i = 0; i < dataGridView1.RowCount; i++)
-                    {
-                        if (dataGridView1.Rows[i].Cells[1].Value.ToString().ToLower().Contains(findText))
-                        {
-                            dataGridView1.Rows[i].Selected = true;
-                            dataGridView1.FirstDisplayedScrollingRowIndex = i;
-                            break;
-                        }
-                    }
+                    findProcess(textFind.Text);
                     //if (!dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString().ToLower().Contains(findText))
                     //{ MessageBox.Show($"Ничего не найдено", "Process Digger - Ошибка поиска процесса", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                     
                 }
                 else { MessageBox.Show($"Введите название процесса", "Process Digger - Ошибка поиска процесса", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+        }
+
+        void findProcess(string findText)
+        {
+            findText = findText.ToLower();
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[1].Value.ToString().ToLower().Contains(findText))
+                {
+                    dataGridView1.ClearSelection();
+                    dataGridView1.Rows[i].Selected = true;
+                    dataGridView1.FirstDisplayedScrollingRowIndex = i;
+                    break;
+                }
+            }
+        }
+
+        private void textFind_Click(object sender, EventArgs e)
+        {
+            if (textFind.Text == "Поиск процесса")
+            {
+                textFind.Text = "";
+            }
+        }
+
+        private void textFind_Leave(object sender, EventArgs e)
+        {
+            if (textFind.Text == "")
+            {
+                textFind.Text = "Поиск процесса";
             }
         }
     }
