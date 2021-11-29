@@ -307,46 +307,6 @@ namespace Process_Digger
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            statusStrip1.ForeColor = Color.White;
-            statusStrip1.BackColor = Color.FromArgb(51, 51, 51);
-            menuStrip1.ForeColor = Color.White;
-            menuStrip1.BackColor = Color.FromArgb(51, 51, 51);
-            menuProcess.ForeColor = Color.White;
-            menuProcess.BackColor = Color.FromArgb(51, 51, 51);
-            menuSettings.ForeColor = Color.White;
-            menuSettings.BackColor = Color.FromArgb(51, 51, 51);
-            menuInformation.ForeColor = Color.White;
-            menuInformation.BackColor = Color.FromArgb(51, 51, 51);
-
-            contextData.BackColor = Color.FromArgb(51, 51, 51);
-            contextData.ForeColor = Color.White;
-
-            dataGridView1.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridView1.BackgroundColor = Color.FromArgb(32, 32, 32);
-            dataGridView1.GridColor = Color.FromArgb(32, 32, 32);
-
-            dataGridView1.AlternatingRowsDefaultCellStyle.ForeColor = Color.FromArgb(149, 160, 166);
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(32, 32, 32);
-
-            dataGridView1.DefaultCellStyle.ForeColor = Color.FromArgb(149, 160, 166);
-            dataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(32, 32, 32);
-
-            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
-            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Black;
-            dataGridView1.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.White;
-            dataGridView1.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.Black;
-
-
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(149, 160, 166);
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(32, 32, 32);
-            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.FromArgb(149, 160, 166);
-            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(32, 32, 32);
-
-            //Util.Find<HScrollBar>(dataGridView1).BackColor = Color.Red;
-        }
-
         private void завершитьПроцессToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             processKill(Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value));
@@ -417,18 +377,27 @@ namespace Process_Digger
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void textFind_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(dataGridView1.Dock != DockStyle.Fill)
+            if (e.KeyChar == (char)13)
             {
-                dataGridView1.Dock = DockStyle.Fill;
-                panel1.Visible = false;
-            }
-            else
-            {
-                dataGridView1.Dock = DockStyle.Right;
-                panel1.Dock = DockStyle.Left;
-                panel1.Visible = true;
+                string findText = textFind.Text.ToLower();
+                if (findText != "")
+                {
+                    for (int i = 0; i < dataGridView1.RowCount; i++)
+                    {
+                        if (dataGridView1.Rows[i].Cells[1].Value.ToString().ToLower().Contains(findText))
+                        {
+                            dataGridView1.Rows[i].Selected = true;
+                            dataGridView1.FirstDisplayedScrollingRowIndex = i;
+                            break;
+                        }
+                    }
+                    //if (!dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString().ToLower().Contains(findText))
+                    //{ MessageBox.Show($"Ничего не найдено", "Process Digger - Ошибка поиска процесса", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                    
+                }
+                else { MessageBox.Show($"Введите название процесса", "Process Digger - Ошибка поиска процесса", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
         }
     }
