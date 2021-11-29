@@ -197,13 +197,20 @@ namespace Process_Digger
             {
                 case 0: //авто
                     {
-                        RegistryKey lightThemeStatus = Registry.CurrentUser.OpenSubKey("SOFTWARE").OpenSubKey("Microsoft").OpenSubKey("Windows").OpenSubKey("CurrentVersion").OpenSubKey("Themes").OpenSubKey("Personalize");
-                       
-                        if (Convert.ToInt32(lightThemeStatus.GetValue("AppsUseLightTheme")) == 0)
+                        try
                         {
-                            setDarkTheme();
+                            RegistryKey lightThemeStatus = Registry.CurrentUser.OpenSubKey("SOFTWARE").OpenSubKey("Microsoft").OpenSubKey("Windows").OpenSubKey("CurrentVersion").OpenSubKey("Themes").OpenSubKey("Personalize");
+
+                            if (Convert.ToInt32(lightThemeStatus.GetValue("AppsUseLightTheme")) == 0)
+                            {
+                                setDarkTheme();
+                            }
+                            else if (Convert.ToInt32(lightThemeStatus.GetValue("AppsUseLightTheme")) == 1)
+                            {
+                                setLightTheme();
+                            }
                         }
-                        else if (Convert.ToInt32(lightThemeStatus.GetValue("AppsUseLightTheme")) == 1)
+                        catch
                         {
                             setLightTheme();
                         }
