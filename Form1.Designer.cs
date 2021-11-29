@@ -46,6 +46,10 @@ namespace Process_Digger
             this.оКомпьютереToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnPic = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextData = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.завершитьПроцессToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.завершитьПроцессыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,10 +63,7 @@ namespace Process_Digger
             this.labelPath = new System.Windows.Forms.Label();
             this.labelNameWindow = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
-            this.ColumnPic = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelDescription = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextData.SuspendLayout();
@@ -128,7 +129,7 @@ namespace Process_Digger
             // поверхВсехОконToolStripMenuItem
             // 
             this.поверхВсехОконToolStripMenuItem.Name = "поверхВсехОконToolStripMenuItem";
-            this.поверхВсехОконToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.поверхВсехОконToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.поверхВсехОконToolStripMenuItem.Text = "Поверх всех окон";
             this.поверхВсехОконToolStripMenuItem.Click += new System.EventHandler(this.поверхВсехОконToolStripMenuItem_Click);
             // 
@@ -136,7 +137,7 @@ namespace Process_Digger
             // 
             this.открытьНастройкиToolStripMenuItem.Image = global::Process_Digger.Properties.Resources.icon_Settings;
             this.открытьНастройкиToolStripMenuItem.Name = "открытьНастройкиToolStripMenuItem";
-            this.открытьНастройкиToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.открытьНастройкиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.открытьНастройкиToolStripMenuItem.Text = "Открыть настройки";
             this.открытьНастройкиToolStripMenuItem.Click += new System.EventHandler(this.открытьНастройкиToolStripMenuItem_Click);
             // 
@@ -154,14 +155,14 @@ namespace Process_Digger
             // 
             this.оКомпьютереToolStripMenuItem.Image = global::Process_Digger.Properties.Resources.icon_AboutPC;
             this.оКомпьютереToolStripMenuItem.Name = "оКомпьютереToolStripMenuItem";
-            this.оКомпьютереToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.оКомпьютереToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оКомпьютереToolStripMenuItem.Text = "О компьютере";
             // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Image = global::Process_Digger.Properties.Resources.icon_AboutProgram;
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
@@ -224,6 +225,35 @@ namespace Process_Digger
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
+            // 
+            // ColumnPic
+            // 
+            this.ColumnPic.HeaderText = "";
+            this.ColumnPic.Name = "ColumnPic";
+            this.ColumnPic.ReadOnly = true;
+            this.ColumnPic.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnPic.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColumnPic.Width = 25;
+            // 
+            // ColumnName
+            // 
+            this.ColumnName.HeaderText = "Название";
+            this.ColumnName.Name = "ColumnName";
+            this.ColumnName.ReadOnly = true;
+            this.ColumnName.Width = 180;
+            // 
+            // ColumnNum
+            // 
+            this.ColumnNum.HeaderText = "ID";
+            this.ColumnNum.Name = "ColumnNum";
+            this.ColumnNum.ReadOnly = true;
+            this.ColumnNum.Width = 50;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Память";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // contextData
             // 
@@ -328,6 +358,7 @@ namespace Process_Digger
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.labelDescription);
             this.panel1.Controls.Add(this.labelPath);
             this.panel1.Controls.Add(this.labelNameWindow);
             this.panel1.Controls.Add(this.labelName);
@@ -367,34 +398,13 @@ namespace Process_Digger
             this.labelName.TabIndex = 0;
             this.labelName.Text = "Название:";
             // 
-            // ColumnPic
+            // labelDescription
             // 
-            this.ColumnPic.HeaderText = "";
-            this.ColumnPic.Name = "ColumnPic";
-            this.ColumnPic.ReadOnly = true;
-            this.ColumnPic.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnPic.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ColumnPic.Width = 25;
-            // 
-            // ColumnName
-            // 
-            this.ColumnName.HeaderText = "Название";
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.ReadOnly = true;
-            this.ColumnName.Width = 180;
-            // 
-            // ColumnNum
-            // 
-            this.ColumnNum.HeaderText = "ID";
-            this.ColumnNum.Name = "ColumnNum";
-            this.ColumnNum.ReadOnly = true;
-            this.ColumnNum.Width = 50;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Память";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.labelDescription.Location = new System.Drawing.Point(4, 101);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(279, 346);
+            this.labelDescription.TabIndex = 3;
+            this.labelDescription.Text = "Описание:\r\n";
             // 
             // Form1
             // 
@@ -462,6 +472,7 @@ namespace Process_Digger
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Label labelDescription;
     }
 }
 

@@ -279,6 +279,7 @@ namespace Process_Digger
             dataGridView1.ForeColor = Color.FromArgb(255, 255, 255);
             dataGridView1.BackgroundColor = Color.FromArgb(32, 32, 32);
             dataGridView1.GridColor = Color.FromArgb(32, 32, 32);
+            
 
             dataGridView1.AlternatingRowsDefaultCellStyle.ForeColor = Color.White;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(32, 32, 32);
@@ -302,6 +303,7 @@ namespace Process_Digger
             labelName.ForeColor = Color.White;
             labelNameWindow.ForeColor = Color.White;
             labelPath.ForeColor = Color.White;
+            labelDescription.ForeColor = Color.White;
 
         }
 
