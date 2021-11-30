@@ -15,7 +15,6 @@ namespace Process_Digger
         {
             this.TopMost = Properties.Settings.Default.topMost;
             comboTheme.SelectedIndex = Properties.Settings.Default.theme;
-            comboSort.SelectedIndex = Properties.Settings.Default.sortBy - 1;
             checkBox1.Checked = Properties.Settings.Default.topMost;
             setTheme();
         }
@@ -25,7 +24,6 @@ namespace Process_Digger
             if (comboTheme.SelectedIndex != Properties.Settings.Default.theme)
             { MessageBox.Show($"Для применения темы, необходимо перезагрузить программу", "Process Digger - Смена темы", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             Properties.Settings.Default.theme = comboTheme.SelectedIndex;
-            Properties.Settings.Default.sortBy = comboSort.SelectedIndex + 1;
             Properties.Settings.Default.topMost = checkBox1.Checked;
             Properties.Settings.Default.Save();
             this.Close();
@@ -64,12 +62,8 @@ namespace Process_Digger
         void setDarkTheme()
         {
             this.BackColor = Color.FromArgb(25, 25, 25);
-            label1.ForeColor = Color.White;
             label2.ForeColor = Color.White;
             checkBox1.ForeColor = Color.White;
-            comboSort.ForeColor = Color.White;
-            comboSort.BackColor = Color.FromArgb(32, 32, 32);
-            comboSort.FlatStyle = FlatStyle.Popup;
             comboTheme.ForeColor = Color.White;
             comboTheme.BackColor = Color.FromArgb(32, 32, 32);
             comboTheme.FlatStyle = FlatStyle.Popup;

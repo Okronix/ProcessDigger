@@ -100,7 +100,7 @@ namespace Process_Digger
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormNewProcess";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Process Digger - Запуск нового процесса";
             this.Load += new System.EventHandler(this.FormNewProcess_Load);
             this.ResumeLayout(false);

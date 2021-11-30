@@ -148,7 +148,7 @@ namespace Process_Digger
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormInfo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Process Digger - О программе";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.FormInfo_Load);

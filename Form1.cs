@@ -60,12 +60,26 @@ namespace Process_Digger
                     dataGridView1.Rows[i].Cells["ColumnPic"].Value = new Bitmap(new Bitmap(Properties.Resources.ico_WinStandart.ToBitmap()));
                 }
 
+
                 dataGridView1.Rows[i].Cells["ColumnName"].Value = proc.ProcessName + ".exe";
                 dataGridView1.Rows[i].Cells["ColumnNum"].Value = proc.Id;
-                dataGridView1.Rows[i].Cells["Column3"].Value = (proc.WorkingSet64 - proc.PrivateMemorySize64) / 1048576 + " MB";
+                try
+                {
+                    var wallTime = DateTime.Now - proc.StartTime;
+                    if (proc.HasExited) wallTime = proc.ExitTime - proc.StartTime;
+                    var procTime = proc.TotalProcessorTime;
+                    var cpuUsage = 100 * procTime.TotalMilliseconds / wallTime.TotalMilliseconds;
+                    dataGridView1.Rows[i].Cells["ColumnCP"].Value = Math.Round(cpuUsage, 2);
+                }
+                catch
+                {
+
+                }
+                dataGridView1.Rows[i].Cells["ColumnRam"].Value = (proc.PrivateMemorySize64) / 1048576;
+
                 i++;
             }
-            this.dataGridView1.Sort(this.dataGridView1.Columns[Properties.Settings.Default.sortBy], ListSortDirection.Ascending);
+            dataGridView1.Sort(dataGridView1.Columns[Properties.Settings.Default.sortBy], ListSortDirection.Ascending);
             toolStripStatusLabel1.Text = $"Процессов запущено: {dataGridView1.Rows.Count.ToString()}";
             processCount = dataGridView1.Rows.Count;
 
@@ -365,23 +379,9 @@ namespace Process_Digger
                 Process proc = Process.GetProcessById(pid);
 
                 labelName.Text = $"Имя: {proc.ProcessName}";
-
-                if (proc.MainWindowTitle != "" && proc.MainWindowTitle != null)
-                {
-                    labelNameWindow.Text = $"Имя окна: {proc.MainWindowTitle}";
-                }
-                else
-                {
-                    labelNameWindow.Text = "Имя окна: отсутствует";
-                }
-                if (proc.MainModule.FileName.ToString() != "" && proc.MainModule.FileName != null)
-                {
-                    labelPath.Text = $"Путь к файлу: {proc.MainModule.FileName.ToString()}";
-                }
-                else
-                {
-                    labelPath.Text = "Путь к файлу: неизвестно";
-                }
+                labelNameWindow.Text = $"Имя окна: {proc.MainWindowTitle}";
+                labelPath.Text = $"Путь к файлу: ";
+                labelPath.Text = $"Путь к файлу: {proc.MainModule.FileName.ToString()}";
 
             }
             catch { }
@@ -432,6 +432,18 @@ namespace Process_Digger
             {
                 textFind.Text = "Поиск процесса";
             }
+        }
+
+        private void оКомпьютереToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormComputer f5 = new FormComputer();
+            f5.ShowDialog();
+        }
+
+        private void dataGridView1_Sorted(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.sortBy = dataGridView1.SortedColumn.Index;
+            Properties.Settings.Default.Save();
         }
     }
 }

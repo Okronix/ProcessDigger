@@ -87,7 +87,7 @@ namespace Process_Digger
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormKillProcess";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Process Digger - Завершение процесса";
             this.Load += new System.EventHandler(this.FormKillProcess_Load);
             this.ResumeLayout(false);
