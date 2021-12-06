@@ -283,14 +283,14 @@ namespace Process_Digger
             this.panel1.Controls.Add(this.labelName);
             this.panel1.Location = new System.Drawing.Point(462, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(286, 423);
+            this.panel1.Size = new System.Drawing.Size(286, 448);
             this.panel1.TabIndex = 8;
             // 
             // labelDescription
             // 
             this.labelDescription.Location = new System.Drawing.Point(4, 101);
             this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(279, 346);
+            this.labelDescription.Size = new System.Drawing.Size(279, 307);
             this.labelDescription.TabIndex = 3;
             this.labelDescription.Text = "Описание:\r\n";
             // 
@@ -424,11 +424,9 @@ namespace Process_Digger
             this.textFind.Font = new System.Drawing.Font("Tahoma", 8F);
             this.textFind.Name = "textFind";
             this.textFind.Size = new System.Drawing.Size(100, 20);
-            this.textFind.Text = "Поиск процесса";
             this.textFind.ToolTipText = "Поиск процесса";
             this.textFind.Leave += new System.EventHandler(this.textFind_Leave);
             this.textFind.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textFind_KeyPress);
-            this.textFind.Click += new System.EventHandler(this.textFind_Click);
             // 
             // Form1
             // 

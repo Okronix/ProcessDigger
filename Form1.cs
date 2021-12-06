@@ -40,9 +40,9 @@ namespace Process_Digger
             {
                 selectedProcess = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
             }
-            catch {}
+            catch { }
 
-            
+
             dataGridView1.Rows.Clear();
             var allProcess = from pr in Process.GetProcesses(".")
                              orderby pr.Id
@@ -83,7 +83,9 @@ namespace Process_Digger
             toolStripStatusLabel1.Text = $"Процессов запущено: {dataGridView1.Rows.Count.ToString()}";
             processCount = dataGridView1.Rows.Count;
 
-            findProcess(selectedProcess);
+            //findProcess(selectedProcess);
+            findProcess(textFind.Text);
+
         }
 
         void processKill(int id)
@@ -238,7 +240,7 @@ namespace Process_Digger
                         }
                         break;
                     }
-                 case 1:
+                case 1:
                     {
                         setLightTheme();
                         break;
@@ -304,7 +306,7 @@ namespace Process_Digger
             dataGridView1.ForeColor = Color.FromArgb(255, 255, 255);
             dataGridView1.BackgroundColor = Color.FromArgb(32, 32, 32);
             dataGridView1.GridColor = Color.FromArgb(32, 32, 32);
-            
+
 
             dataGridView1.AlternatingRowsDefaultCellStyle.ForeColor = Color.White;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(32, 32, 32);
@@ -397,9 +399,13 @@ namespace Process_Digger
                     findProcess(textFind.Text);
                     //if (!dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString().ToLower().Contains(findText))
                     //{ MessageBox.Show($"Ничего не найдено", "Process Digger - Ошибка поиска процесса", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-                    
+
                 }
                 else { MessageBox.Show($"Введите название процесса", "Process Digger - Ошибка поиска процесса", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+            else
+            {
+                findProcess(textFind.Text);
             }
         }
 
@@ -410,27 +416,16 @@ namespace Process_Digger
             {
                 if (dataGridView1.Rows[i].Cells[1].Value.ToString().ToLower().Contains(findText))
                 {
-                    dataGridView1.ClearSelection();
-                    dataGridView1.Rows[i].Selected = true;
-                    dataGridView1.FirstDisplayedScrollingRowIndex = i;
-                    break;
+                    dataGridView1.Rows[i].Visible = true;
+                    //dataGridView1.ClearSelection();
+                    //dataGridView1.Rows[i].Selected = true;
+                    //dataGridView1.FirstDisplayedScrollingRowIndex = i;
+                    //break;
                 }
-            }
-        }
-
-        private void textFind_Click(object sender, EventArgs e)
-        {
-            if (textFind.Text == "Поиск процесса")
-            {
-                textFind.Text = "";
-            }
-        }
-
-        private void textFind_Leave(object sender, EventArgs e)
-        {
-            if (textFind.Text == "")
-            {
-                textFind.Text = "Поиск процесса";
+                else
+                {
+                    dataGridView1.Rows[i].Visible = false;
+                }
             }
         }
 
@@ -444,6 +439,11 @@ namespace Process_Digger
         {
             Properties.Settings.Default.sortBy = dataGridView1.SortedColumn.Index;
             Properties.Settings.Default.Save();
+        }
+
+        private void textFind_Leave(object sender, EventArgs e)
+        {
+            findProcess(textFind.Text);
         }
     }
 }
