@@ -11,21 +11,23 @@ namespace Process_Digger
         {
             InitializeComponent();
         }
+
         private void FormSettings_Load(object sender, EventArgs e)
         {
             this.TopMost = Properties.Settings.Default.topMost;
             comboTheme.SelectedIndex = Properties.Settings.Default.theme;
             checkBox1.Checked = Properties.Settings.Default.topMost;
             setTheme();
+
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             if (comboTheme.SelectedIndex != Properties.Settings.Default.theme)
-            { MessageBox.Show($"Для применения темы, необходимо перезагрузить программу", "Process Digger - Смена темы", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             Properties.Settings.Default.theme = comboTheme.SelectedIndex;
             Properties.Settings.Default.topMost = checkBox1.Checked;
             Properties.Settings.Default.Save();
+            Program.f1.checkTheme();
             this.Close();
         }
         void setTheme()

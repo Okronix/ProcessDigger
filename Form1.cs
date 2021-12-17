@@ -16,11 +16,12 @@ namespace Process_Digger
         int processCount = 0;
         public Form1()
         {
+            Program.f1 = this;
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            setTheme();
+            checkTheme();
             update();
             updateProcess();
         }
@@ -215,7 +216,7 @@ namespace Process_Digger
             }
         }
 
-        public void setTheme()
+        public void checkTheme()
         {
             switch (Properties.Settings.Default.theme)
             {
@@ -227,27 +228,27 @@ namespace Process_Digger
 
                             if (Convert.ToInt32(lightThemeStatus.GetValue("AppsUseLightTheme")) == 0)
                             {
-                                setDarkTheme();
+                                setTheme(Color.White, Color.FromArgb(43, 43, 43), Color.FromArgb(25, 25, 25), Color.FromArgb(32, 32, 32), Color.FromArgb(52, 52, 52), Color.FromArgb(255, 255, 255), Color.FromArgb(119, 119, 119), Color.FromArgb(149, 160, 166));
                             }
                             else if (Convert.ToInt32(lightThemeStatus.GetValue("AppsUseLightTheme")) == 1)
                             {
-                                setLightTheme();
+                                setTheme(Color.Black, Color.FromArgb(240, 240, 240), Color.FromArgb(240, 240, 240), Color.White, Color.White, Color.White, Color.FromArgb(0, 120, 215), Color.White);
                             }
                         }
                         catch
                         {
-                            setLightTheme();
+                            setTheme(Color.Black, Color.FromArgb(240, 240, 240), Color.FromArgb(240, 240, 240), Color.White, Color.White, Color.White, Color.FromArgb(0, 120, 215), Color.White);
                         }
                         break;
                     }
-                case 1:
+                case 1: //Светлая
                     {
-                        setLightTheme();
+                        setTheme(Color.Black, Color.FromArgb(240, 240, 240), Color.FromArgb(240, 240, 240), Color.White, Color.White, Color.White, Color.FromArgb(0, 120, 215), Color.White);
                         break;
                     }
                 case 2: //темная
                     {
-                        setDarkTheme();
+                        setTheme(Color.White, Color.FromArgb(43, 43, 43), Color.FromArgb(25, 25, 25), Color.FromArgb(32, 32, 32), Color.FromArgb(52, 52, 52), Color.FromArgb(255, 255, 255), Color.FromArgb(119, 119, 119), Color.FromArgb(149, 160, 166));
                         break;
                     }
                 case 3: //черная(AMOLED)
@@ -259,78 +260,91 @@ namespace Process_Digger
 
         void setLightTheme()
         {
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
-            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
-            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White;
+            //Color ColorText = Color.Black;
+            //Color ColorBack = Color.FromArgb(240, 240, 240);
+            //Color ColorControlBack = Color.FromArgb(240, 240, 240);
+            //Color ColorGrid = Color.Black;
+            //Color ColorTextFind = Color.White;
+            //Color ColorDataGrid = Color.White;
+            //Color ColorDataGridSelectBack = Color.FromArgb(0, 120, 215);
+            //Color ColorDataGridHeader = Color.White;
         }
 
-        void setDarkTheme()
+        void setTheme(Color ColorText, Color ColorBack, Color ColorControlBack, Color ColorGrid, Color ColorTextFind, Color ColorDataGrid, Color ColorDataGridSelectBack, Color ColorDataGridHeader)
         {
-            statusStrip1.ForeColor = Color.White;
-            statusStrip1.BackColor = Color.FromArgb(25, 25, 25);
-            menuStrip1.ForeColor = Color.White;
-            menuStrip1.BackColor = Color.FromArgb(25, 25, 25);
+            //Color ColorText = Color.White;
+            //Color ColorBack = Color.FromArgb(43, 43, 43);
+            //Color ColorControlBack = Color.FromArgb(25, 25, 25);
+            //Color ColorGrid = Color.FromArgb(32, 32, 32);
+            //Color ColorTextFind = Color.FromArgb(52, 52, 52);
+            //Color ColorDataGrid = Color.FromArgb(255, 255, 255);
+            //Color ColorDataGridSelectBack = Color.FromArgb(119, 119, 119);
+            //Color ColorDataGridHeader = Color.FromArgb(149, 160, 166);
 
-            menuProcess.ForeColor = Color.White;
-            menuProcess.BackColor = Color.FromArgb(25, 25, 25);
-            запуститьПроцессToolStripMenuItem.ForeColor = Color.White;
-            запуститьПроцессToolStripMenuItem.BackColor = Color.FromArgb(43, 43, 43);
-            завершитьПроцессToolStripMenuItem.ForeColor = Color.White;
-            завершитьПроцессToolStripMenuItem.BackColor = Color.FromArgb(43, 43, 43);
+            statusStrip1.ForeColor = ColorText;
+            statusStrip1.BackColor = ColorControlBack;
+            menuStrip1.ForeColor = ColorText;
+            menuStrip1.BackColor = ColorControlBack;
 
-            menuSettings.ForeColor = Color.White;
-            menuSettings.BackColor = Color.FromArgb(25, 25, 25);
-            поверхВсехОконToolStripMenuItem.ForeColor = Color.White;
-            поверхВсехОконToolStripMenuItem.BackColor = Color.FromArgb(43, 43, 43);
-            открытьНастройкиToolStripMenuItem.ForeColor = Color.White;
-            открытьНастройкиToolStripMenuItem.BackColor = Color.FromArgb(43, 43, 43);
+            menuProcess.ForeColor = ColorText;
+            menuProcess.BackColor = ColorControlBack;
+            запуститьПроцессToolStripMenuItem.ForeColor = ColorText;
+            запуститьПроцессToolStripMenuItem.BackColor = ColorBack;
+            завершитьПроцессToolStripMenuItem.ForeColor = ColorText;
+            завершитьПроцессToolStripMenuItem.BackColor = ColorBack;
 
-            menuInformation.ForeColor = Color.White;
-            menuInformation.BackColor = Color.FromArgb(25, 25, 25);
-            оКомпьютереToolStripMenuItem.ForeColor = Color.White;
-            оКомпьютереToolStripMenuItem.BackColor = Color.FromArgb(43, 43, 43);
-            оПрограммеToolStripMenuItem.ForeColor = Color.White;
-            оПрограммеToolStripMenuItem.BackColor = Color.FromArgb(43, 43, 43);
+            menuSettings.ForeColor = ColorText;
+            menuSettings.BackColor = ColorControlBack;
+            поверхВсехОконToolStripMenuItem.ForeColor = ColorText;
+            поверхВсехОконToolStripMenuItem.BackColor = ColorBack;
+            открытьНастройкиToolStripMenuItem.ForeColor = ColorText;
+            открытьНастройкиToolStripMenuItem.BackColor = ColorBack;
 
-            textFind.ForeColor = Color.White;
-            textFind.BackColor = Color.FromArgb(52, 52, 52);
+            menuInformation.ForeColor = ColorText;
+            menuInformation.BackColor = ColorControlBack;
+            оКомпьютереToolStripMenuItem.ForeColor = ColorText;
+            оКомпьютереToolStripMenuItem.BackColor = ColorBack;
+            оПрограммеToolStripMenuItem.ForeColor = ColorText;
+            оПрограммеToolStripMenuItem.BackColor = ColorBack;
 
-            contextData.BackColor = Color.FromArgb(43, 43, 43);
-            contextData.ForeColor = Color.White;
-            завершитьПроцессToolStripMenuItem1.BackColor = Color.FromArgb(43, 43, 43);
-            завершитьПроцессыToolStripMenuItem1.BackColor = Color.FromArgb(43, 43, 43);
-            завершитьДервеоToolStripMenuItem.BackColor = Color.FromArgb(43, 43, 43);
-            свойстваToolStripMenuItem.BackColor = Color.FromArgb(43, 43, 43);
+            textFind.ForeColor = ColorText;
+            textFind.BackColor = ColorTextFind;
 
-            dataGridView1.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridView1.BackgroundColor = Color.FromArgb(32, 32, 32);
-            dataGridView1.GridColor = Color.FromArgb(32, 32, 32);
+            contextData.BackColor = ColorBack;
+            contextData.ForeColor = ColorText;
+            завершитьПроцессToolStripMenuItem1.BackColor = 
+            завершитьПроцессыToolStripMenuItem1.BackColor = ColorBack;
+            завершитьДеревоToolStripMenuItem.BackColor = ColorBack;
+            свойстваToolStripMenuItem.BackColor = ColorBack;
+
+            dataGridView1.ForeColor = ColorDataGrid;
+            dataGridView1.BackgroundColor = ColorGrid;
+            dataGridView1.GridColor = ColorGrid;
 
 
-            dataGridView1.AlternatingRowsDefaultCellStyle.ForeColor = Color.White;
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(32, 32, 32);
+            dataGridView1.AlternatingRowsDefaultCellStyle.ForeColor = ColorText;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = ColorGrid;
 
-            dataGridView1.DefaultCellStyle.ForeColor = Color.White;
-            dataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(32, 32, 32);
+            dataGridView1.DefaultCellStyle.ForeColor = ColorText;
+            dataGridView1.DefaultCellStyle.BackColor = ColorGrid;
 
-            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
-            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(119, 119, 119);
-            dataGridView1.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.White;
-            dataGridView1.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(119, 119, 119);
+            dataGridView1.DefaultCellStyle.SelectionForeColor = ColorText;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = ColorDataGridSelectBack;
+            dataGridView1.AlternatingRowsDefaultCellStyle.SelectionForeColor = ColorText;
+            dataGridView1.AlternatingRowsDefaultCellStyle.SelectionBackColor = ColorDataGridSelectBack;
 
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(25, 25, 25);
-            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.FromArgb(149, 160, 166);
-            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(25, 25, 25);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = ColorText;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = ColorControlBack;
+            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionForeColor = ColorDataGridHeader;
+            dataGridView1.ColumnHeadersDefaultCellStyle.SelectionBackColor = ColorControlBack;
 
-            toolStripContainer1.ContentPanel.BackColor = Color.FromArgb(25, 25, 25);
+            toolStripContainer1.ContentPanel.BackColor = ColorControlBack;
 
-            panel1.BackColor = Color.FromArgb(25, 25, 25);
-            labelName.ForeColor = Color.White;
-            labelNameWindow.ForeColor = Color.White;
-            labelPath.ForeColor = Color.White;
-            labelDescription.ForeColor = Color.White;
+            panel1.BackColor = ColorControlBack;
+            labelName.ForeColor = ColorText;
+            labelNameWindow.ForeColor = ColorText;
+            labelPath.ForeColor = ColorText;
+            labelDescription.ForeColor = ColorText;
 
         }
 
@@ -357,10 +371,7 @@ namespace Process_Digger
                 Process proc = Process.GetProcessById(pid);
                 proc.Kill();
             }
-            catch (ArgumentException)
-            {
-                // Process already exited.
-            }
+            catch {}
         }
 
         private void завершитьПроцессыToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -381,7 +392,9 @@ namespace Process_Digger
                 Process proc = Process.GetProcessById(pid);
 
                 labelName.Text = $"Имя: {proc.ProcessName}";
+                labelNameWindow.Text = $"Имя окна: ";
                 labelNameWindow.Text = $"Имя окна: {proc.MainWindowTitle}";
+
                 labelPath.Text = $"Путь к файлу: ";
                 labelPath.Text = $"Путь к файлу: {proc.MainModule.FileName.ToString()}";
 
@@ -445,5 +458,7 @@ namespace Process_Digger
         {
             findProcess(textFind.Text);
         }
+
+
     }
 }

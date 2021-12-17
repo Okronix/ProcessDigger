@@ -44,7 +44,7 @@ namespace Process_Digger
             this.contextData = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.завершитьПроцессToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.завершитьПроцессыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.завершитьДервеоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.завершитьДеревоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.свойстваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -179,7 +179,7 @@ namespace Process_Digger
             this.contextData.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.завершитьПроцессToolStripMenuItem1,
             this.завершитьПроцессыToolStripMenuItem1,
-            this.завершитьДервеоToolStripMenuItem,
+            this.завершитьДеревоToolStripMenuItem,
             this.свойстваToolStripMenuItem});
             this.contextData.Name = "contextData";
             this.contextData.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -202,13 +202,13 @@ namespace Process_Digger
             this.завершитьПроцессыToolStripMenuItem1.Text = "Завершить процессы";
             this.завершитьПроцессыToolStripMenuItem1.Click += new System.EventHandler(this.завершитьПроцессыToolStripMenuItem1_Click);
             // 
-            // завершитьДервеоToolStripMenuItem
+            // завершитьДеревоToolStripMenuItem
             // 
-            this.завершитьДервеоToolStripMenuItem.Image = global::Process_Digger.Properties.Resources.icon_TreeProcessKill;
-            this.завершитьДервеоToolStripMenuItem.Name = "завершитьДервеоToolStripMenuItem";
-            this.завершитьДервеоToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.завершитьДервеоToolStripMenuItem.Text = "Завершить дервео";
-            this.завершитьДервеоToolStripMenuItem.Click += new System.EventHandler(this.завершитьДервеоToolStripMenuItem_Click);
+            this.завершитьДеревоToolStripMenuItem.Image = global::Process_Digger.Properties.Resources.icon_TreeProcessKill;
+            this.завершитьДеревоToolStripMenuItem.Name = "завершитьДеревоToolStripMenuItem";
+            this.завершитьДеревоToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.завершитьДеревоToolStripMenuItem.Text = "Завершить дерево";
+            this.завершитьДеревоToolStripMenuItem.Click += new System.EventHandler(this.завершитьДервеоToolStripMenuItem_Click);
             // 
             // свойстваToolStripMenuItem
             // 
@@ -474,7 +474,7 @@ namespace Process_Digger
         private System.Windows.Forms.ToolStripMenuItem свойстваToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.ToolStripMenuItem завершитьДервеоToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem завершитьДеревоToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelPath;
         private System.Windows.Forms.Label labelNameWindow;
