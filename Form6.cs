@@ -17,7 +17,7 @@ namespace Process_Digger
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close();   
         }
 
         private void FormKillProcess_Load(object sender, EventArgs e)
@@ -56,7 +56,6 @@ namespace Process_Digger
             }
             else { MessageBox.Show($"Введите название процесса", "Process Digger - Ошибка завершения процесса", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
-
 
         private void btnStart_Click(object sender, EventArgs e)
         {

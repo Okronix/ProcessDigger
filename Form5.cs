@@ -26,11 +26,15 @@ namespace Process_Digger
 
             foreach (var mo in new ManagementObjectSearcher("root\\cimv2", "select * from Win32_VideoController").Get())
                 labelVideoController.Text += (string)mo["Name"];
-
-            foreach (var mo in new ManagementObjectSearcher("root\\wmi", "select * from WmiMonitorID").Get())
-                foreach(var monitor in (ushort[])mo["UserFriendlyName"])
-                    labelMonitor.Text += (char)monitor;
-        }
+            try
+            {
+                foreach (var mo in new ManagementObjectSearcher("root\\wmi", "select * from WmiMonitorID").Get())
+                    foreach (var monitor in (ushort[])mo["UserFriendlyName"])
+                        labelMonitor.Text += (char)monitor;
+            }
+            catch { }
+            }
+            
 
         void setTheme()
         {

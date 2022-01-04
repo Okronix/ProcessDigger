@@ -29,6 +29,7 @@ namespace Process_Digger
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKillProcess));
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.textProcessName = new System.Windows.Forms.TextBox();
@@ -84,6 +85,7 @@ namespace Process_Digger
             this.Controls.Add(this.textProcessName);
             this.Controls.Add(this.labelEnterProcess);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormKillProcess";

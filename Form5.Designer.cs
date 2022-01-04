@@ -29,6 +29,7 @@ namespace Process_Digger
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormComputer));
             this.labelBaseBoard = new System.Windows.Forms.Label();
             this.labelCPU = new System.Windows.Forms.Label();
             this.labelVideoController = new System.Windows.Forms.Label();
@@ -77,6 +78,7 @@ namespace Process_Digger
             this.Controls.Add(this.labelCPU);
             this.Controls.Add(this.labelBaseBoard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormComputer";

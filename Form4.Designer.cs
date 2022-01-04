@@ -29,6 +29,7 @@ namespace Process_Digger
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSettings));
             this.btnConfirm = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboTheme = new System.Windows.Forms.ComboBox();
@@ -90,6 +91,7 @@ namespace Process_Digger
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnConfirm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormSettings";

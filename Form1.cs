@@ -145,14 +145,6 @@ namespace Process_Digger
             }
         }
 
-        private void свойстваToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.CurrentRow.Cells[1].Value != null)
-            {
-                infoProcess(Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value));
-            }
-        }
-
         void infoProcess(int id)
         {
             Process process = Process.GetProcessById(id);
@@ -315,7 +307,6 @@ namespace Process_Digger
             завершитьПроцессToolStripMenuItem1.BackColor = 
             завершитьПроцессыToolStripMenuItem1.BackColor = ColorBack;
             завершитьДеревоToolStripMenuItem.BackColor = ColorBack;
-            свойстваToolStripMenuItem.BackColor = ColorBack;
 
             dataGridView1.ForeColor = ColorDataGrid;
             dataGridView1.BackgroundColor = ColorGrid;

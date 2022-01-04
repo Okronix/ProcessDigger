@@ -45,7 +45,6 @@ namespace Process_Digger
             this.завершитьПроцессToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.завершитьПроцессыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.завершитьДеревоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.свойстваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -132,7 +131,7 @@ namespace Process_Digger
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(460, 448);
+            this.dataGridView1.Size = new System.Drawing.Size(478, 448);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
@@ -179,8 +178,7 @@ namespace Process_Digger
             this.contextData.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.завершитьПроцессToolStripMenuItem1,
             this.завершитьПроцессыToolStripMenuItem1,
-            this.завершитьДеревоToolStripMenuItem,
-            this.свойстваToolStripMenuItem});
+            this.завершитьДеревоToolStripMenuItem});
             this.contextData.Name = "contextData";
             this.contextData.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.contextData.Size = new System.Drawing.Size(182, 92);
@@ -210,15 +208,6 @@ namespace Process_Digger
             this.завершитьДеревоToolStripMenuItem.Text = "Завершить дерево";
             this.завершитьДеревоToolStripMenuItem.Click += new System.EventHandler(this.завершитьДервеоToolStripMenuItem_Click);
             // 
-            // свойстваToolStripMenuItem
-            // 
-            this.свойстваToolStripMenuItem.Image = global::Process_Digger.Properties.Resources.icon_Info;
-            this.свойстваToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.свойстваToolStripMenuItem.Name = "свойстваToolStripMenuItem";
-            this.свойстваToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.свойстваToolStripMenuItem.Text = "Свойства";
-            this.свойстваToolStripMenuItem.Click += new System.EventHandler(this.свойстваToolStripMenuItem_Click);
-            // 
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.SystemColors.Control;
@@ -228,7 +217,7 @@ namespace Process_Digger
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip1.Size = new System.Drawing.Size(748, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(719, 22);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -256,7 +245,7 @@ namespace Process_Digger
             this.toolStripContainer1.ContentPanel.Controls.Add(this.panel1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView1);
             this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(748, 447);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(719, 447);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -265,7 +254,7 @@ namespace Process_Digger
             // toolStripContainer1.RightToolStripPanel
             // 
             this.toolStripContainer1.RightToolStripPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.toolStripContainer1.Size = new System.Drawing.Size(748, 493);
+            this.toolStripContainer1.Size = new System.Drawing.Size(719, 493);
             this.toolStripContainer1.TabIndex = 8;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -281,9 +270,9 @@ namespace Process_Digger
             this.panel1.Controls.Add(this.labelPath);
             this.panel1.Controls.Add(this.labelNameWindow);
             this.panel1.Controls.Add(this.labelName);
-            this.panel1.Location = new System.Drawing.Point(462, 0);
+            this.panel1.Location = new System.Drawing.Point(478, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(286, 448);
+            this.panel1.Size = new System.Drawing.Size(252, 448);
             this.panel1.TabIndex = 8;
             // 
             // labelDescription
@@ -301,7 +290,7 @@ namespace Process_Digger
             this.labelPath.AutoEllipsis = true;
             this.labelPath.Location = new System.Drawing.Point(3, 57);
             this.labelPath.Name = "labelPath";
-            this.labelPath.Size = new System.Drawing.Size(280, 44);
+            this.labelPath.Size = new System.Drawing.Size(246, 44);
             this.labelPath.TabIndex = 2;
             this.labelPath.Text = "Путь к файлу:";
             // 
@@ -311,7 +300,7 @@ namespace Process_Digger
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNameWindow.Location = new System.Drawing.Point(3, 34);
             this.labelNameWindow.Name = "labelNameWindow";
-            this.labelNameWindow.Size = new System.Drawing.Size(280, 23);
+            this.labelNameWindow.Size = new System.Drawing.Size(246, 23);
             this.labelNameWindow.TabIndex = 1;
             this.labelNameWindow.Text = "Имя окна:";
             // 
@@ -321,7 +310,7 @@ namespace Process_Digger
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelName.Location = new System.Drawing.Point(3, 11);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(280, 23);
+            this.labelName.Size = new System.Drawing.Size(246, 23);
             this.labelName.TabIndex = 0;
             this.labelName.Text = "Название:";
             // 
@@ -337,7 +326,7 @@ namespace Process_Digger
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(748, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(719, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -433,13 +422,13 @@ namespace Process_Digger
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(748, 493);
+            this.ClientSize = new System.Drawing.Size(719, 493);
             this.Controls.Add(this.toolStripContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(487, 528);
+            this.MinimumSize = new System.Drawing.Size(735, 528);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Process Digger";
@@ -471,7 +460,6 @@ namespace Process_Digger
         private System.Windows.Forms.ContextMenuStrip contextData;
         private System.Windows.Forms.ToolStripMenuItem завершитьПроцессToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem завершитьПроцессыToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem свойстваToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.ToolStripMenuItem завершитьДеревоToolStripMenuItem;
