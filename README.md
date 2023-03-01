@@ -23,5 +23,5 @@ Process Digger может быть использован как опытным�
 - Старый телеграм канал: [FRAMEDEV](https://t.me/+VHwM4LtIRvXJIqol)
 
 ## Поддержать автора
-CloudTips https://pay.cloudtips.ru/p/105e5b0a
-XMR: 8AsjFH383uoCE5PNn1dhYzi3dkUfw6Cjs888Y5NTSCz918eszCApp6bZWiphfkBgswYSsayDxr9zmJpfywe9N6wS2ffSEam
+- CloudTips https://pay.cloudtips.ru/p/105e5b0a
+- XMR: 8AsjFH383uoCE5PNn1dhYzi3dkUfw6Cjs888Y5NTSCz918eszCApp6bZWiphfkBgswYSsayDxr9zmJpfywe9N6wS2ffSEam
